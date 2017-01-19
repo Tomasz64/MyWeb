@@ -14,27 +14,24 @@ if (isset($_SESSION['username'])){
   <title>Przeglad przepisow</title>
   </head>
   <body>
+<table class="table table-striped table-bordered table-hover"> 
+<tr><th>Przepisy</th></tr>
 <?php
 $strSQL = "SELECT * FROM cookbook";
 $rs = mysqli_query($connection, $strSQL);
 
 while($row = mysqli_fetch_array($rs)) {
 $id = $row['id'];
-$recipename = $row['recipename'];
-echo '<table class="table table-striped table-bordered table-hover">'; 
-echo "<tr><th>Przepis" . " " . $id . "</th></tr>"; 
-
-{
-  echo "<tr><td>"; 
-  echo ('<a href="recipe_details.php?id=' . $id . '">' . $recipename . '</a>');
-  echo "</td></tr>";     
-}
-echo "</table>"; 
-
+$recipename = $row['recipename']; 
+	{
+		echo "<tr><td>"; 
+		echo ('<a href="recipe_details.php?id=' . $id . '">' . $recipename . '</a>');
+		echo "</td></tr>";     
+	}
 }
 mysqli_close($connection);
-
 ?>
+echo "</table>"; 
 <p><a href='main.php'>Powrot do menu</a></p>
   </body>
 </html>
