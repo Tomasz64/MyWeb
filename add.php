@@ -14,10 +14,11 @@ if (isset($_SESSION['username'])){
 			
 		$query = "INSERT INTO `cookbook` (recipeauthor, recipename, ingredients, recipesteps) VALUES ('$username', '$recipename', '$ingredients', '$recipesteps')";
         $result = mysqli_query($connection, $query);
+		
         if($result){
             $smsg = "Przepis dodany.";
         }else{
-            $fmsg ="Coœ posz³o nie tak :(";
+            $fmsg ="Cos poszlo nie tak :(";
 		}
 	}
 }else{
