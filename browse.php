@@ -31,7 +31,7 @@ $recipename = $row['recipename'];
 }
 mysqli_close($connection);
 ?>
-echo "</table>"; 
+</table>
 <p><a href='main.php'>Powrot do menu</a></p>
   </body>
 </html>
