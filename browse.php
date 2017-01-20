@@ -32,6 +32,6 @@ $recipename = $row['recipename'];
 mysqli_close($connection);
 ?>
 </table>
-<p><a href='main.php'>Powrot do menu</a></p>
+<a class="btn btn-lg btn-primary btn-block" href="main.php">Powrót do menu</a>
   </body>
 </html>

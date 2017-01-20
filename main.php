@@ -21,12 +21,11 @@ $username = $_SESSION['username'];
 <body>
 <h2>
 <?php
-	echo "Hello " . $username . " "; 
+	echo "Witaj " . $username . " " . 'wybierz któryś z przycisków poniżej aby przejść dalej'; 
 ?>
 </h2>
-<p><a href='add.php'>Dodaj przepis</a></p>
-<p><a href='browse.php'>Przeglądaj przepisy</a></p>
-<p><a href='logout.php'>Logout</a></p>
-
+<a class="btn btn-lg btn-primary btn-block" href="add.php">Dodaj Nowy Przepis</a>
+<a class="btn btn-lg btn-primary btn-block" href="browse.php">Przeglądaj przepisy</a>
+<a class="btn btn-lg btn-primary btn-block" href="logout.php">Wyloguj się</a>
 </body>
 </html>

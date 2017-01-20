@@ -37,8 +37,7 @@ echo "</table>";
 mysqli_close($connection);
 ?>
 
-
-<p><a href='browse.php'>Powrot do Przegladania</a></p>
-<p><a href='main.php'>Powrot do Menu</a></p>
+<a class="btn btn-lg btn-primary btn-block" href="browse.php">Powrót do Przeglądania</a>
+<a class="btn btn-lg btn-primary btn-block" href="main.php">Powrót do menu</a>
   </body>
 </html>

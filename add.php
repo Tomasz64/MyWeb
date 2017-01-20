@@ -55,8 +55,8 @@ if (isset($_SESSION['username'])){
 	<p>Sposob przygotowania:
       <input type="text" name="recipesteps"> 
 	</p>
-      <input type="submit" value="Zapisz">	
+	<button class="btn btn-lg btn-primary btn-block" type="submit">Zapisz</button>	
     </form>
-	<p><a href='main.php'>Powrot do Menu</a></p>
+	<a class="btn btn-lg btn-primary btn-block" href="main.php">Powrót do menu</a>
   </body>
 </html>
