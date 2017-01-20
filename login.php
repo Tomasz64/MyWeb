@@ -1,6 +1,6 @@
 ﻿<?php
 session_start();
- require('connect.php');
+ require('/resources/connect.php');
 
 if (isset($_POST['username']) and isset($_POST['password'])){
 
@@ -23,7 +23,7 @@ $fmsg = "Zła nazwa lub hasło użytkownika";
 if (isset($_SESSION['username'])){
 $username = $_SESSION['username'];
 
-header('Location: main.php');
+header('Location: php/main.php');
  
 }else{
 	//header('Location: login.php');
@@ -57,7 +57,7 @@ header('Location: main.php');
             <label for="inputPassword" class="sr-only">Password</label>
             <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Hasło" required>
             <button class="btn btn-lg btn-primary btn-block" type="submit">Zaloguj</button>
-            <a class="btn btn-lg btn-primary btn-block" href="register.php">Zarejestruj</a>
+            <a class="btn btn-lg btn-primary btn-block" href="php/register.php">Zarejestruj</a>
         </form>
     </div>
 

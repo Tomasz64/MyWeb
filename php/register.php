@@ -1,5 +1,5 @@
-<?php
-require('connect.php');
+﻿<?php
+require('../resources/connect.php');
 if (isset($_POST['username']) && isset($_POST['password'])){
 	$username = $_POST['username'];
 	$email = $_POST['email'];
@@ -49,7 +49,7 @@ if($result){
         <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Hasło" required>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Zarejerstruj
         </button>
-        <a class="btn btn-lg btn-primary btn-block" href="login.php">Zaloguj
+        <a class="btn btn-lg btn-primary btn-block" href="../login.php">Zaloguj
         </a>
       </form>
     </div>

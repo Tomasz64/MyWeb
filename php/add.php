@@ -1,5 +1,5 @@
-<?php
-require('connect.php');
+﻿<?php
+require('../resources/connect.php');
 session_start();
 
 
@@ -22,7 +22,7 @@ if (isset($_SESSION['username'])){
 		}
 	}
 }else{
-	header('Location: login.php');
+	header('Location: ../login.php');
 }
 ?>
 
@@ -47,13 +47,13 @@ if (isset($_SESSION['username'])){
     <?php } ?>
     <form action="" method="GET">
 	<p>Nazwa Przepisu:
-      <input type="text" name="recipename">
+      <input type="text" name="recipename" required>
 	</p>
 	<p>Skladniki:
-      <input type="text" name="ingredients"> 
+      <input type="text" name="ingredients" required> 
 	</p>
 	<p>Sposob przygotowania:
-      <input type="text" name="recipesteps"> 
+      <input type="text" name="recipesteps" required> 
 	</p>
 	<button class="btn btn-lg btn-primary btn-block" type="submit">Zapisz</button>	
     </form>
