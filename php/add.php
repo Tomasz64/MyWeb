@@ -46,14 +46,17 @@ if (isset($_SESSION['username'])){
     </div>
     <?php } ?>
     <form action="" method="GET">
-	<p>Nazwa Przepisu:
-      <input type="text" name="recipename" required>
+	<p>	
+	<label for="recipename">Nazwa Przepisu</label>
+	<input type="text" class="form-control" id="recipename" name= recipename required>
+	</p>	
+	<p>	
+	<label for="ingredients">Składniki</label>
+	<input type="text" class="form-control" id="ingredients" name= ingredients required>
 	</p>
-	<p>Skladniki:
-      <input type="text" name="ingredients" required> 
-	</p>
-	<p>Sposob przygotowania:
-      <input type="text" name="recipesteps" required> 
+	<p>	
+	<label for="recipesteps">Kroki do wykonania</label>
+	<textarea class ="form-control" rows="3" id="recipesteps" name= recipesteps required ></textarea>
 	</p>
 	<button class="btn btn-lg btn-primary btn-block" type="submit">Zapisz</button>	
     </form>

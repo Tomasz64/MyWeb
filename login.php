@@ -12,6 +12,7 @@ $query = "SELECT * FROM `user` WHERE username='$username' and password='$passwor
 $result = mysqli_query($connection, $query) or die(mysqli_error($connection));
 $count = mysqli_num_rows($result);
 
+
 if ($count == 1){
 $_SESSION['username'] = $username;
 }else{
@@ -24,9 +25,24 @@ if (isset($_SESSION['username'])){
 $username = $_SESSION['username'];
 
 header('Location: php/main.php');
+function getRemoteIPAddress() {
+    if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+        return $_SERVER['HTTP_CLIENT_IP'];
+
+    } else if (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) { 
+        return $_SERVER['HTTP_X_FORWARDED_FOR'];
+    }
+    return $_SERVER['REMOTE_ADDR'];
+}
+$ip = getRemoteIPAddress();
+$query1 = "INSERT INTO `login` (ipaddr) VALUES ('$ip')";
+$result1 = mysqli_query($connection, $query1);
  
 }else{
 	//header('Location: login.php');
+
+
+
 ?>
 <html>
 
@@ -42,6 +58,7 @@ header('Location: php/main.php');
 
 <body>
 
+
     <div class="container">
         <form class="form-signin" method="POST">
             <?php if(isset($fmsg)){ ?>
@@ -49,7 +66,7 @@ header('Location: php/main.php');
                 <?php echo $fmsg; ?> </div>
             <?php } ?>
 			<h1><center>Przepisy Kulinarne Wszib</center></h1>
-            <h3><center>Zaloguj się aby przeglądać bazę danych przepisów, lub stwórz nowe konto.</center></h3>
+           <h3><center>Zaloguj się aby przeglądać bazę danych przepisów, lub stwórz nowe konto.</center></h3>
             <div class="input-group">
                 <span class="input-group-addon" id="basic-addon1">@</span>
                 <input type="text" name="username" class="form-control" placeholder="Nazwa użytkownika" required>
@@ -60,7 +77,6 @@ header('Location: php/main.php');
             <a class="btn btn-lg btn-primary btn-block" href="php/register.php">Zarejestruj</a>
         </form>
     </div>
-
 </body>
 
 </html>

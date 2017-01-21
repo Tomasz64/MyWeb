@@ -1,9 +1,9 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
+-- version 4.5.2
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Czas generowania: 18 Sty 2017, 10:27
+-- Host: localhost
+-- Czas generowania: 21 Sty 2017, 18:26
 -- Wersja serwera: 10.1.19-MariaDB
 -- Wersja PHP: 5.6.28
 
@@ -34,12 +34,16 @@ CREATE TABLE `cookbook` (
   `recipesteps` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
+
 --
--- Zrzut danych tabeli `cookbook`
+-- Struktura tabeli dla tabeli `login`
 --
 
-INSERT INTO `cookbook` (`id`, `recipename`, `recipeauthor`, `ingredients`, `recipesteps`) VALUES
-(1, 'Kanapka z serem', 'Tomek', 'Chleb, Maslo, Ser', 'Pokroj chleb, posmaruj maslem, polz ser');
+CREATE TABLE `login` (
+  `id` int(11) NOT NULL,
+  `ipaddr` varchar(35) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -56,16 +60,6 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Zrzut danych tabeli `user`
---
-
-INSERT INTO `user` (`id`, `username`, `email`, `password`, `active`) VALUES
-(1, 'Test', 'test@test.com', 'aqqaqq', 0),
-(2, 'test1', 'test@aaa.com', 'aqqaqq', 0),
-(5, 'Jaszui', 'dariawisniewska96@gmail.com', 'Mis', 0),
-(7, 'Tomek', 'email@email.com', 'mojehaslo', 0);
-
---
 -- Indeksy dla zrzutów tabel
 --
 
@@ -73,6 +67,12 @@ INSERT INTO `user` (`id`, `username`, `email`, `password`, `active`) VALUES
 -- Indexes for table `cookbook`
 --
 ALTER TABLE `cookbook`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `login`
+--
+ALTER TABLE `login`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -90,12 +90,17 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT dla tabeli `cookbook`
 --
 ALTER TABLE `cookbook`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+--
+-- AUTO_INCREMENT dla tabeli `login`
+--
+ALTER TABLE `login`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT dla tabeli `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
