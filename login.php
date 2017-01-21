@@ -1,6 +1,6 @@
 ﻿<?php
 session_start();
- require('/resources/connect.php');
+ require('resources/connect.php');
 
 if (isset($_POST['username']) and isset($_POST['password'])){
 
