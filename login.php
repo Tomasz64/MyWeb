@@ -48,8 +48,8 @@ header('Location: php/main.php');
             <div class="alert alert-danger" role="alert">
                 <?php echo $fmsg; ?> </div>
             <?php } ?>
-			<h1>Tutaj będzie jakiś ładny header</h1>
-            <h2 class="form-signin-heading">Zaloguj się aby przeglądać bazę danych przepisów, lub stwórz nowe konto.</h2>
+			<h1><center>Przepisy Kulinarne Wszib</center></h1>
+            <h3><center>Zaloguj się aby przeglądać bazę danych przepisów, lub stwórz nowe konto.</center></h3>
             <div class="input-group">
                 <span class="input-group-addon" id="basic-addon1">@</span>
                 <input type="text" name="username" class="form-control" placeholder="Nazwa użytkownika" required>
